@@ -8,7 +8,9 @@ def get_line():
 
 
 def  get_point():
-    line2 = 0
+    point3 = float(input("Give x desired on the line: "))
+    return point3
+
 
 
 # Calculations
@@ -22,13 +24,14 @@ def calc_intercept(tuple, slope):
     return intercept
 
 
-def calc_point():
-    line4 = 0
+def calc_point(slope, intercept, point):
+    y = slope*point + intercept
+    return y
 
 
 # Output
-def give_ans():
-    line5 = 0
+def give_ans(Y, m, b):
+    print("The line you gave is {:.2f}x + {:.2f}, and the y is {:.2f}".format(m, b, Y))
 
 
 # Main and Calling Main
@@ -40,9 +43,11 @@ def main():
     print(calcSlope)
     calcIntercept = calc_intercept(tuple1, calcSlope)
     print(calcIntercept)
-    get_point()
-    calc_point()
-    give_ans()
+    point = get_point()
+    print(point)
+    calcY = calc_point(calcSlope, calcIntercept, point)
+    print(calcY)
+    give_ans(calcY, calcSlope, calcIntercept)
 
 
 if __name__ == "__main__":
