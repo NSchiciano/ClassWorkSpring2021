@@ -32,3 +32,13 @@ def test_calc_point(m, b, x, expected):
     from ClassExLine import calc_point
     answer = calc_point(m, b, x)
     assert answer == expected
+
+@pytest.mark.parametrize("m, b, points, expected", [
+    (5, 10, [0,10], True),
+    (2, -10, [0, 5], False),
+    (1.5, -7.5, [10,7.5], True),
+])
+def test_check_points(m, b, points, expected):
+    from ClassExLine import check_points
+    answer = check_points(m, b, points)
+    assert answer == expected

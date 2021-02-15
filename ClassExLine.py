@@ -12,6 +12,11 @@ def  get_point():
     return point3
 
 
+def get_points():
+    points4 = input("Test if Points are on your line x,y: ")
+    tuple1 = tuple(map(int,points4.split(',')))
+    return(tuple1)
+
 
 # Calculations
 def calc_slope(tuple1, tuple2):
@@ -29,9 +34,22 @@ def calc_point(slope, intercept, point):
     return y
 
 
+def check_points(m, b, points):
+    y = m*points[0] + b
+    if y == points[1]:
+        return True
+    else:
+        return False
+
+
 # Output
 def give_ans(Y, m, b):
     print("The line you gave is {:.2f}x + {:.2f}, and the y is {:.2f}".format(m, b, Y))
+
+
+def give_TofF(TorF):
+    print("Those points are on the line if true below")
+    print(TorF)
 
 
 # Main and Calling Main
@@ -42,6 +60,9 @@ def main():
     point = get_point()
     calcY = calc_point(calcSlope, calcIntercept, point)
     give_ans(calcY, calcSlope, calcIntercept)
+    possible_points = get_points()
+    TorF = check_points(calcSlope, calcIntercept, possible_points)
+    give_TofF(TorF)
 
 
 if __name__ == "__main__":
