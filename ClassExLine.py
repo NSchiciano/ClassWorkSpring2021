@@ -37,16 +37,10 @@ def give_ans(Y, m, b):
 # Main and Calling Main
 def main():
     tuple1,tuple2 = get_line()
-    print(tuple1)
-    print(tuple2)
     calcSlope = calc_slope(tuple1,tuple2)
-    print(calcSlope)
     calcIntercept = calc_intercept(tuple1, calcSlope)
-    print(calcIntercept)
     point = get_point()
-    print(point)
     calcY = calc_point(calcSlope, calcIntercept, point)
-    print(calcY)
     give_ans(calcY, calcSlope, calcIntercept)
 
 
